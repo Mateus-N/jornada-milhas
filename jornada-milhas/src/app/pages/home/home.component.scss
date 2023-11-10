@@ -1,0 +1,14 @@
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 16px;
+  margin-bottom: 40px;
+}
+
+.home__page {
+  h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+}

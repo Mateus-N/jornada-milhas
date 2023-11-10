@@ -1,0 +1,23 @@
+.app-footer {
+  background-color: #000;
+  color: #fff;
+  padding: 48px 0;
+  app-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .footer__esquerdo {
+      img {
+        width: 160px;
+        margin-bottom: 8px;
+      }
+    }
+    .footer__direito {
+      .social__links {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<div class="busca-page">
+  <app-banner src="../../../assets/imagens/banner-pesquisa.png" alt="banner da tela de busca" />
+  <app-container>
+    <app-form-busca (realizarBusca)="busca($event)" />
+    <section class="conteudo">
+      <aside class="filtros-adicionais">
+        <app-filtros-complementares (realizarBusca)="busca($event)" />
+      </aside>
+        <div class="passagens">
+          <div class="destaques">
+            <app-card>
+              <app-card-destaques destacadaPor="Menor preço" [passagem]="destaques?.maisBarata" />
+            </app-card>
+            <app-card>
+              <app-card-destaques destacadaPor="Recomendado" [passagem]="destaques?.sugerida" />
+            </app-card>
+            <app-card>
+              <app-card-destaques destacadaPor="Menor tempo" [passagem]="destaques?.maisRapida" />
+            </app-card>
+          </div>
+          <app-passagem *ngFor="let passagem of passagens" [passagem]="passagem" />
+        </div>
+    </section>
+  </app-container>
+</div>

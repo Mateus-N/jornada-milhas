@@ -1,0 +1,8 @@
+<app-banner src="assets/imagens/banner-perfil.png" alt="Banner da tela de perfil" />
+<app-form-base
+  [perfilComponent]="true"
+  [pageTitle]="pageTitle"
+  [textButton]="textButton"
+  (acaoClique)="atualizar()"
+  (logout)="deslogar()"
+/>
