@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class CardComponent {
   @Input()
-  variant: 'primary' | 'secondary' = 'primary'
+  variant: 'primary' | 'secondary' = 'primary';
 }

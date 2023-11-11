@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class BannerComponent {
   @Input()
-  src: string = ''
+  src = '';
   @Input()
-  alt: string = ''
+  alt = '';
 }

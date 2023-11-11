@@ -11,17 +11,17 @@ import { FormValidations } from '../form-validations';
 })
 export class FormBaseComponent implements OnInit {
   @Input()
-  perfilComponent: boolean = false;
+  perfilComponent = false;
   @Input()
-  pageTitle: string = ''
+  pageTitle = '';
   @Input()
-  textButton: string = ''
+  textButton = '';
   @Output()
-  acaoClique: EventEmitter<any> = new EventEmitter<any>()
+  acaoClique: EventEmitter<void> = new EventEmitter<void>();
   @Output()
-  logout: EventEmitter<any> = new EventEmitter<any>()
-  cadastroForm!: FormGroup
-  estadoControl = new FormControl<UnidadeFederativa | null>(null, Validators.required)
+  logout: EventEmitter<void> = new EventEmitter<void>();
+  cadastroForm!: FormGroup;
+  estadoControl = new FormControl<UnidadeFederativa | null>(null, Validators.required);
 
   constructor(
     private formBuilder: FormBuilder,
@@ -42,24 +42,24 @@ export class FormBaseComponent implements OnInit {
       confirmarEmail: [null, [Validators.required, Validators.email, FormValidations.equalTo('email')]],
       confirmarSenha: [null, [Validators.required, Validators.minLength(3), FormValidations.equalTo('senha')]],
       aceitarTermos: [null, [Validators.requiredTrue]]
-    })
+    });
 
     if (this.perfilComponent) {
-      this.cadastroForm.get('aceitarTermos')?.setValidators(null)
+      this.cadastroForm.get('aceitarTermos')?.setValidators(null);
     } else {
-      this.cadastroForm.get('aceitarTermos')?.setValidators([Validators.requiredTrue])
+      this.cadastroForm.get('aceitarTermos')?.setValidators([Validators.requiredTrue]);
     }
 
-    this.cadastroForm.get('aceitarTermos')?.updateValueAndValidity()
+    this.cadastroForm.get('aceitarTermos')?.updateValueAndValidity();
 
-    this.formularioService.setCadastro(this.cadastroForm)
+    this.formularioService.setCadastro(this.cadastroForm);
   }
 
   executarAcao() {
-    this.acaoClique.emit()
+    this.acaoClique.emit();
   }
 
   deslogar() {
-    this.logout.emit()
+    this.logout.emit();
   }
 }
