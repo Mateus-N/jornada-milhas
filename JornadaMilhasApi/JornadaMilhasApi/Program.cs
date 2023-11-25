@@ -23,7 +23,6 @@ using (var scope = app.Services.CreateScope())
     db.Database.Migrate();
 }
 
-
 startup.Configure(app, app.Environment);
 
 try
